@@ -1,6 +1,16 @@
 # Find server unifi source
 
-This is a docker file for the [Unifi source](https://github.com/jacobalberty/find-lf-unifi-source) for the [find server](https://www.internalpositioning.com)
+This is a docker file for the a unifi ap source for the project for the [find server v3](https://www.internalpositioning.com)
+Based on the work of [Unifi source for find v2](https://github.com/jacobalberty/find-lf-unifi-source)
+
+Environment variables :
+-----------------
+
+- UNIFIUSER
+- UNIFIPASS
+- UNIFIADDR
+- FINDURL
+- FINDGROUP
 
 Learning :
 -----------------
