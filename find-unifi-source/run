@@ -2,10 +2,10 @@
 
 cd /srv
 cp config.json.sample config.json
-sed -i 's|admin|$UNIFIUSER|' config.json
-sed -i 's|changeme|$UNIFIPASS|' config.json
-sed -i 's|unifiaddr|$UNIFIADDR|' config.json
-sed -i 's|findurl|$FINDURL|' config.json
-sed -i 's|findgroup|$FINDGROUP|' config.json
+sed -i "s|admin|$UNIFIUSER|" config.json
+sed -i "s|changeme|$UNIFIPASS|" config.json
+sed -i "s|unifiaddr|$UNIFIADDR|" config.json
+sed -i "s|findurl|$FINDURL|" config.json
+sed -i "s|findgroup|$FINDGROUP|" config.json
 
 node index.js
