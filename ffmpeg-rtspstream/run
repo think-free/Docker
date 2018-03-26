@@ -2,5 +2,5 @@
 
 while :
 do
-	/usr/bin/ffmpeg -i tcp://0.0.0.0:8181?listen -vcodec libx264 -vf "scale=480:320" -ar 22050 -ab 20000 -f flv rtmp://$1:1935/webcam/mystream
+	/usr/bin/ffmpeg -i tcp://0.0.0.0:8181?listen -vcodec libx264 -vf "scale=704:396" -ar 22050 -ab 20000 -f flv rtmp://$1:1935/webcam/mystream
 done
