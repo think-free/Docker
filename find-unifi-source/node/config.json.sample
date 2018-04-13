@@ -1,0 +1,16 @@
+{
+  "unifi": {
+    "username": "admin",
+    "password": "changeme",
+    "addr": "unifiaddr",
+    "port": "8443",
+    "site": "default"
+  },
+  "findlf": {
+    "url": "findurl",
+    "group": "findgroup"
+  },
+  "other": {
+    "interval": "3"
+  }
+}
