@@ -4,6 +4,6 @@ Personal docker images source files, you can find the images on [my docker hub](
 How to build :
 ------------------
 
-docker login
-docker build . -t thinkfree84/ffmpeg-rtspstream
-docker push thinkfree84/ffmpeg-rtspstream
+docker login  
+docker build . -t thinkfree84/ffmpeg-rtspstream  
+docker push thinkfree84/ffmpeg-rtspstream  
