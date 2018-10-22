@@ -6,9 +6,11 @@ FROM debian:stretch
 MAINTAINER Christophe <meumeu1402@gmail.com>
 
 # Run file
-ADD run /usr/local/bin/
+WORKDIR /app
+ADD run /app/
 
 # Install ffmpeg
-RUN apt update && apt install ffmpeg -y  && rm -rf /var/lib/apt/lists/ && chmod +x /usr/local/bin/run
+RUN apt update && apt install ffmpeg -y  && rm -rf /var/lib/apt/lists/ && chmod +x /app/run
 
 EXPOSE 8181
+ENTRYPOINT ./run
