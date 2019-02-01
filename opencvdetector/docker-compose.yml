@@ -1,0 +1,10 @@
+version: "3"
+services:
+    opencvdetector:
+        container_name: opencvdetector
+        image: thinkfree84/opencvdetector
+        environment:
+            - BROKER=localhost
+            - TOPIC=axihome/5/field/manual/home/opencv/test/count
+            - CLIENT_NAME=opencv_detector_1
+            - STREAM_URL=rtmp://ipcamera/live
