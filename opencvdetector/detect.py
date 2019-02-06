@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import sys
 import os
+import time
 
 import paho.mqtt.client as paho
 
@@ -35,6 +36,8 @@ while(cap.isOpened()):
     ret, frame = cap.read()
 
     if frame is None:
+        print("No frame readed")
+        time.sleep(0.05)
         break
 
     # Filter image
