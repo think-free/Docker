@@ -36,7 +36,6 @@ while(cap.isOpened()):
     ret, frame = cap.read()
 
     if frame is None:
-        print("No frame readed")
         time.sleep(0.05)
         break
 
@@ -54,14 +53,14 @@ while(cap.isOpened()):
     height, width = diff.shape
     nonzero = cv2.countNonZero(diff)
 
-    print(nonzero)
-
     if (nonzero < minPixelsChange):
         nonzero = 0
 
     if (nonzero != last):
-        client.publish(mqttTopic, nonzero)
+        info = client.publish(mqttTopic, nonzero)
         last = nonzero
+        if (info.rc != paho.MQTT_ERR_SUCCESS) :
+            print("Error publishing Mqtt message")
 
     # Keep last frame for future use
     last_frame = frame
