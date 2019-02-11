@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+    zwave-mqtt-bridge:
+        image: thinkfree84/zwave-mqtt-bridge:latest
+        environment:
+            - USER=""
+            - PASSWORD=""
+            - CONFIGPATH=/etc/zwave
+            - DEVICE=/dev/ttyACM0
+            - TOPIC=zwave
+            - MQTTHOST=localhost
+        devices:
+            - "/dev/ttyACM0:/dev/ttyACM0"
+        volumes:
+            - ./config:/etc/zwave
+        network_mode: host

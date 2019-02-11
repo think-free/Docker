@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# -h, --help            show this help message and exit
+# -U MQTT_USER          MQTT username
+# -p MQTT_PASS          MQTT password
+# -d DEVICE, --device DEVICE
+#                       Path to Z-Stick device
+# -u USER_PATH          Path to write user files (e.g. current Z-Wave
+#                       configursation
+# --basetopic BASETOPIC
+#                       Base topic to publish/subscribe to
+
+echo "Starting with"
+echo "    - USER =       $USER"
+echo "    - PASSWORD =   $PASSWORD"
+echo "    - DEVICE =     $DEVICE"
+echo "    - CONFIGPATH = $CONFIGPATH"
+echo "    - TOPIC =      $TOPIC"
+echo "    - MQTTHOST =   $MQTTHOST"
+echo ""
+
+echo "started" > /tmp/zwave
+
+if [ "$USER" == "" ];
+then
+    /usr/local/bin/zwave_mqtt_bridge -d $DEVICE -u $CONFIGPATH --basetopic $TOPIC
+else
+    /usr/local/bin/zwave_mqtt_bridge -U $USER -p $PASSWORD -d $DEVICE -u $CONFIGPATH --basetopic $TOPIC $MQTTHOST
+fi
+
+echo "stopped" > /tmp/zwave
